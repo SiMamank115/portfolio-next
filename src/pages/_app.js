@@ -1,25 +1,16 @@
 import Loading from "@/components/loading";
 import LoadImage from "@/components/preload";
 import "@/styles/globals.css";
+import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 
 export default function App({ Component, pageProps }) {
     const [load, setLoad] = useState(false);
     const [imageloaded, setLmageloaded] = useState(false);
-    const fetchData = async () => {
-        try {
-            const img = await LoadImage(["https://i.imgur.com/nal1uUk.jpg"]);
-            setLmageloaded(true);
-        } catch {
-            setLmageloaded(false);
-        }
-        if (imageloaded) {
-            setLoad(true);
-        }
-    };
     useEffect(() => {
+        window.scrollTo(0, 0);
         async function fetchData() {
-            const img = await LoadImage(["https://i.imgur.com/nal1uUk.jpg","lifestyle-night-city.jpg"]);
+            await LoadImage(["https://i.imgur.com/nal1uUk.jpg", "lifestyle-night-city.jpg"]);
             setLmageloaded(true);
         }
         if (imageloaded) {
