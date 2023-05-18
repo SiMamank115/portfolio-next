@@ -1,10 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root {
-    --foreground-rgb: #212529;
-    --background-start-rgb: #f8f9fa;
-    --background-end-rgb: #e9ecef;
+    --foreground-rgb: #0a0908;
+    --background-start-rgb: #ced4da;
+    --background-end-rgb: #ced4da;
     --base-scroll: #adb5bd;
     --base-scroll-hover: #8e949b;
 }
