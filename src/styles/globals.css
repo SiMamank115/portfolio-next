@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+    --foreground-rgb: #212529;
+    --background-start-rgb: #f8f9fa;
+    --background-end-rgb: #e9ecef;
+    --base-scroll: #adb5bd;
+    --base-scroll-hover: #8e949b;
+}
+.dark:root {
+    --foreground-rgb: #f8f9fa;
+    --background-start-rgb: #0a0908;
+    --background-end-rgb: #080708;
+    --base-scroll: #212529;
+    --base-scroll-hover: #343a40;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+        --base-scroll: #fff;
+        --base-scroll-hover: #fff;
+    }
+}
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    background: var(--background-end-rgb);
+}
+::-webkit-scrollbar-thumb {
+    border: 3.5px solid var(--background-end-rgb);
+    border-radius: 10px;
+    background: var(--base-scroll);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--base-scroll-hover);
+}
+body {
+    color: var(--foreground-rgb);
+    background: linear-gradient(to bottom, transparent, var(--background-end-rgb)) var(--background-start-rgb);
+}
+.loaded {
+    @apply transition duration-1000 opacity-0 delay-200;
+}
+.loaded-svg {
+    @apply scale-[2] opacity-0 transition duration-500;
+}
