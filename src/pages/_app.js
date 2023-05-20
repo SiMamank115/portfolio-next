@@ -1,5 +1,6 @@
 import Loading from "@/components/loading";
 import LoadImage from "@/components/preload";
+import { SmoothScrollContext, SmoothScrollProvider } from "@/components/smoothContext";
 import "@/styles/fonts.css";
 import "@/styles/globals.css";
 import "aos/dist/aos.css";
@@ -23,9 +24,11 @@ export default function App({ Component, pageProps }) {
         }
     }, [imageloaded]);
     return (
-        <main className={quicksand.className}>
+        <SmoothScrollProvider options={{ smooth: true }}>
+        <main data-scroll-container className={quicksand.className}>
             <Component {...pageProps} />
             <Loading loaded={load} />
         </main>
+        </SmoothScrollProvider>
     );
 }

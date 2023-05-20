@@ -49,3 +49,6 @@ body {
 .loaded-svg {
     @apply scale-[2] opacity-0 transition duration-500;
 }
+div[data-aos][data-aos-easing][data-aos-delay].text-exit {
+    @apply blur-lg opacity-0 duration-1000 delay-0 scale-[2.0] ease-out;
+}
