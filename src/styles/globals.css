@@ -28,6 +28,7 @@
 body {
     color: var(--foreground-rgb);
     background: linear-gradient(to bottom, transparent, var(--background-end-rgb)) var(--background-start-rgb);
+    @apply max-w-[1280px] mx-auto;
 }
 .loaded {
     @apply transition duration-1000 opacity-0 delay-200;
@@ -41,13 +42,16 @@ div[data-aos][data-aos-easing][data-aos-delay].text-exit {
 .parallax-layer {
     @apply absolute;
 }
+.parallax-layer-1-extender {
+    @apply h-[200px] w-screen bg-[#1C2637] z-[100] top-1/2;
+}
 .parallax-layer-1 {
-    @apply h-[600px] w-screen bg-[url('/layer-1-long.webp')] bg-right-top bg-cover z-[100];
-    top: calc(50% - 300px);
+    @apply h-[700px] w-screen bg-[url('/layer-1.webp')] bg-top bg-cover z-[100];
+    top: calc(50% - 450px);
 }
 .parallax-layer-2 {
-    @apply h-[250px] w-screen bg-green-500 z-[99];
-    top: calc(50% - 250px);
+    @apply h-[700px] w-screen bg-[url('/layer-2.webp')] bg-top bg-cover z-[99];
+    top: calc(50% - 600px);
 }
 .parallax-layer-3 {
     @apply h-[350px] w-screen bg-red-500 z-[98];

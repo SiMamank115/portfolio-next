@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }) {
     useEffect(() => {
         window.scrollTo(0, 0);
         async function fetchData() {
-            await LoadImage(["layer-1-long.webp"]);
+            await LoadImage(["layer-1.webp","layer-2.webp"]);
             setLmageloaded(true);
         }
         if (imageloaded) {
