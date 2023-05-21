@@ -3,6 +3,7 @@ import Toggler from "@/components/ModeToggler";
 import { useEffect, useState } from "react";
 import Compact from "@/helpers/classname";
 import { gsap } from "gsap";
+import { SmoothScrollProvider } from "@/components/smoothContext";
 const nunito = Nunito({ subsets: ["latin"] });
 export default function Home() {
     const animation = ["fade-up", "fade-down", "fade-right", "fade-left", "fade-up-right", "fade-up-left", "fade-down-right", "fade-down-left", "zoom-in-up", "zoom-in-down", "zoom-in-left", "zoom-in-right", "zoom-out-up", "zoom-out-down", "zoom-out-right", "zoom-out-left"],
@@ -58,18 +59,20 @@ export default function Home() {
         if (text_animation.length != 0) return;
     }, [animated]);
     return (
-        <>
-        <div className="text-3xl sm:text-6xl flex min-h-screen flex-wrap justify-center items-center font-extrabold hero-content">
-            {text_animation}
-        </div>
-            <div key={"parallax-layer-1"} id={"parallax-layer-1"} className={"parallax-layer-1 parallax-layer"}></div>
-            <div key={"parallax-layer-2"} id={"parallax-layer-2"} className={"parallax-layer-2 parallax-layer"}></div>
-            <div key={"parallax-layer-3"} id={"parallax-layer-3"} className={"parallax-layer-3 parallax-layer"}></div>
-            <div key={"parallax-layer-4"} id={"parallax-layer-4"} className={"parallax-layer-4 parallax-layer"}></div>
-        <div className="bg-indigo-500 text-3xl sm:text-6xl flex min-h-screen flex-wrap justify-center items-center font-extrabold section-1">
-            LOL
-        </div>
-        </>
+        <SmoothScrollProvider options={{ smooth: true }}>
+            <div data-scroll-section>
+                <div className="text-3xl sm:text-6xl flex min-h-screen flex-wrap justify-center items-center font-extrabold hero-content">
+                    {text_animation}
+                </div>
+                    <div data-scroll-speed={5} data-scroll key={"parallax-layer-1"} id={"parallax-layer-1"} className={"parallax-layer-1 parallax-layer"}></div>
+                    <div data-scroll-speed={4} data-scroll key={"parallax-layer-2"} id={"parallax-layer-2"} className={"parallax-layer-2 parallax-layer"}></div>
+                    <div data-scroll-speed={3} data-scroll key={"parallax-layer-3"} id={"parallax-layer-3"} className={"parallax-layer-3 parallax-layer"}></div>
+                    <div data-scroll-speed={2} data-scroll key={"parallax-layer-4"} id={"parallax-layer-4"} className={"parallax-layer-4 parallax-layer"}></div>
+                <div className="bg-indigo-500 text-3xl sm:text-6xl flex min-h-screen flex-wrap justify-center items-center font-extrabold section-1">
+                    LOL
+                </div>
+            </div>
+        </SmoothScrollProvider>
     );
 }
 // fade-up		 fade-down		 fade-right		 fade-left

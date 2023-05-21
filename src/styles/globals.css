@@ -25,20 +25,6 @@
         --base-scroll-hover: #fff;
     }
 }
-::-webkit-scrollbar {
-    width: 15px;
-}
-::-webkit-scrollbar-track {
-    background: var(--background-end-rgb);
-}
-::-webkit-scrollbar-thumb {
-    border: 3.5px solid var(--background-end-rgb);
-    border-radius: 10px;
-    background: var(--base-scroll);
-}
-::-webkit-scrollbar-thumb:hover {
-    background: var(--base-scroll-hover);
-}
 body {
     color: var(--foreground-rgb);
     background: linear-gradient(to bottom, transparent, var(--background-end-rgb)) var(--background-start-rgb);
@@ -56,14 +42,18 @@ div[data-aos][data-aos-easing][data-aos-delay].text-exit {
     @apply absolute;
 }
 .parallax-layer-1 {
-    @apply h-[150px] w-[4000px]  bg-gradient-to-r from-indigo-500 to-slate-900 bottom-0 z-[100];
+    @apply h-[600px] w-screen bg-[url('/layer-1-long.webp')] bg-right-top bg-cover z-[100];
+    top: calc(50% - 300px);
 }
 .parallax-layer-2 {
-    @apply h-[250px] w-[4000px]  bg-gradient-to-r from-green-500 to-slate-900 bottom-0 z-[99];
+    @apply h-[250px] w-screen bg-green-500 z-[99];
+    top: calc(50% - 250px);
 }
 .parallax-layer-3 {
-    @apply h-[350px] w-[4000px]  bg-gradient-to-r from-red-500 to-slate-900 bottom-0 z-[98];
+    @apply h-[350px] w-screen bg-red-500 z-[98];
+    top: calc(50% - 350px);
 }
 .parallax-layer-4 {
-    @apply h-[450px] w-[4000px]  bg-gradient-to-r from-orange-500 to-slate-900 bottom-0 z-[97];
+    @apply h-[450px] w-screen bg-orange-500 z-[97];
+    top: calc(50% - 450px);
 }
