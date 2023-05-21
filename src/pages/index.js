@@ -11,13 +11,12 @@ export default function Home() {
         [text_animation, set_text_animation] = useState([]),
         [animated, setAnimated] = useState(false),
         [textFinished, seTextFinished] = useState(0),
-        textDelay = 50,
+        textDelay = process.env.NEXT_PUBLIC_DEV ? 0 : 50,
         tl = gsap.timeline();
     function text_event() {
         seTextFinished((x) => x + 1);
     }
     useEffect(() => {
-        console.log(textFinished);
         if (textFinished == hero_text.length * 2) {
             tl.to(".hero-content", {
                 duration: 1,
@@ -25,9 +24,14 @@ export default function Home() {
                 scale: 0.5,
                 y: "-=100px",
                 opacity: 0,
-                delay: 0.5,
-                "transition-delay": 0,
+                delay: process.env.NEXT_PUBLIC_DEV ? 0 : 0.5,
                 ease: "expo.out",
+                onComplete: () => {
+                    document.querySelectorAll(".hero-content > .hero-text-animation").forEach((e) => {
+                        e.remove();
+                    });
+                    document.querySelector(".hero-content").removeAttribute("style");
+                },
             });
         }
     }, [textFinished]);
@@ -45,7 +49,7 @@ export default function Home() {
                         return res;
                     });
                     return (
-                        <div onTransitionEndCapture={text_event} data-aos-delay={textDelay * x} key={keyname} className={Compact("block my-0", e == " " ? "px-[1%]" : "p-0", nunito.className)} data-aos-easing="ease-out-back" data-aos={aos_hooks[keyname]}>
+                        <div onTransitionEndCapture={text_event} data-aos-delay={textDelay * x} key={keyname} className={Compact("block my-0 hero-text-animation", e == " " ? "px-[1%]" : "p-0", nunito.className)} data-aos-easing="ease-out-back" data-aos={aos_hooks[keyname]}>
                             {e}
                         </div>
                     );
@@ -54,9 +58,18 @@ export default function Home() {
         if (text_animation.length != 0) return;
     }, [animated]);
     return (
-        // <SmoothScrollProvider options={{ smooth: true }}>
-            <div className="text-3xl sm:text-6xl flex min-h-screen flex-wrap justify-center items-center font-extrabold hero-content">{text_animation}</div>
-        // </SmoothScrollProvider>
+        <>
+        <div className="text-3xl sm:text-6xl flex min-h-screen flex-wrap justify-center items-center font-extrabold hero-content">
+            {text_animation}
+        </div>
+            <div key={"parallax-layer-1"} id={"parallax-layer-1"} className={"parallax-layer-1 parallax-layer"}></div>
+            <div key={"parallax-layer-2"} id={"parallax-layer-2"} className={"parallax-layer-2 parallax-layer"}></div>
+            <div key={"parallax-layer-3"} id={"parallax-layer-3"} className={"parallax-layer-3 parallax-layer"}></div>
+            <div key={"parallax-layer-4"} id={"parallax-layer-4"} className={"parallax-layer-4 parallax-layer"}></div>
+        <div className="bg-indigo-500 text-3xl sm:text-6xl flex min-h-screen flex-wrap justify-center items-center font-extrabold section-1">
+            LOL
+        </div>
+        </>
     );
 }
 // fade-up		 fade-down		 fade-right		 fade-left

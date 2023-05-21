@@ -1,6 +1,6 @@
 import Loading from "@/components/loading";
 import LoadImage from "@/components/preload";
-import { SmoothScrollContext, SmoothScrollProvider } from "@/components/smoothContext";
+import { SmoothScrollProvider } from "@/components/smoothContext";
 import "@/styles/fonts.css";
 import "@/styles/globals.css";
 import "aos/dist/aos.css";

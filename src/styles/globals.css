@@ -52,3 +52,18 @@ body {
 div[data-aos][data-aos-easing][data-aos-delay].text-exit {
     @apply blur-lg opacity-0 duration-1000 delay-0 scale-[2.0] ease-out;
 }
+.parallax-layer {
+    @apply absolute;
+}
+.parallax-layer-1 {
+    @apply h-[150px] w-[4000px]  bg-gradient-to-r from-indigo-500 to-slate-900 bottom-0 z-[100];
+}
+.parallax-layer-2 {
+    @apply h-[250px] w-[4000px]  bg-gradient-to-r from-green-500 to-slate-900 bottom-0 z-[99];
+}
+.parallax-layer-3 {
+    @apply h-[350px] w-[4000px]  bg-gradient-to-r from-red-500 to-slate-900 bottom-0 z-[98];
+}
+.parallax-layer-4 {
+    @apply h-[450px] w-[4000px]  bg-gradient-to-r from-orange-500 to-slate-900 bottom-0 z-[97];
+}
