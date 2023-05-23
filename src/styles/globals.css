@@ -8,6 +8,7 @@
     --background-end-rgb: #ced4da;
     --base-scroll: #adb5bd;
     --base-scroll-hover: #8e949b;
+    --innerHeight: 0
 }
 .dark:root {
     --foreground-rgb: #f8f9fa;
@@ -28,7 +29,7 @@
 body {
     color: var(--foreground-rgb);
     background: linear-gradient(to bottom, transparent, var(--background-end-rgb)) var(--background-start-rgb);
-    @apply max-w-[1280px] mx-auto;
+    @apply max-w-[2560px] mx-auto;
 }
 .loaded {
     @apply transition duration-1000 opacity-0 delay-200;
@@ -43,21 +44,24 @@ div[data-aos][data-aos-easing][data-aos-delay].text-exit {
     @apply absolute;
 }
 .parallax-layer-1-extender {
-    @apply h-[200px] w-screen bg-[#1C2637] z-[100] top-1/2;
+    @apply h-1/3 w-screen bg-[#1C2737] z-[100] top-[75vmin];
 }
 .parallax-layer-1 {
-    @apply h-[700px] w-screen bg-[url('/layer-1.webp')] bg-top bg-cover z-[100];
-    top: calc(50% - 450px);
+    @apply h-[80vh] w-screen bg-[url('/layer-1.webp')] bg-top bg-cover z-[100];
+    top: 15vmin;
 }
 .parallax-layer-2 {
-    @apply h-[700px] w-screen bg-[url('/layer-2.webp')] bg-top bg-cover z-[99];
-    top: calc(50% - 600px);
+    @apply h-[60vh] w-screen bg-[url('/layer-2.webp')] bg-left-top bg-cover z-[99];
+    top: 45vmin;
 }
 .parallax-layer-3 {
-    @apply h-[350px] w-screen bg-red-500 z-[98];
-    top: calc(50% - 350px);
+    @apply h-[80vh] w-screen bg-[url('/layer-3.webp')] bg-top bg-cover z-[98];
+    top: 20vmin;
 }
 .parallax-layer-4 {
-    @apply h-[450px] w-screen bg-orange-500 z-[97];
-    top: calc(50% - 450px);
+    @apply h-[70vh] w-screen bg-[url('/layer-4.webp')] bg-top bg-cover z-[97];
+    top: 15vmin;
+}
+.section-1 {
+    @apply z-[200] relative;
 }

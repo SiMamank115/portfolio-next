@@ -6,6 +6,7 @@ export default function Loading({ loaded }) {
         setTimeout(() => {
             document.querySelector(".loading-screen")?.remove();
             Aos.init();
+            document.querySelector(":root").style.setProperty("--innerHeight", window.innerHeight + "px");
         }, loadedDelay);
     }
     return (

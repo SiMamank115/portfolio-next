@@ -65,11 +65,11 @@ export default function Home() {
                     {text_animation}
                 </div>
                     <div data-scroll-speed={5} data-scroll key={"parallax-layer-1"} id={"parallax-layer-1"} className={"parallax-layer-1 parallax-layer"}></div>
-                    <div data-scroll-speed={4} data-scroll key={"parallax-layer-1-extender"} id={"parallax-layer-1-extender"} className={"parallax-layer-1-extender parallax-layer"}></div>
-                    <div data-scroll-speed={4} data-scroll key={"parallax-layer-2"} id={"parallax-layer-2"} className={"parallax-layer-2 parallax-layer"}></div>
-                    <div data-scroll-speed={3} data-scroll key={"parallax-layer-3"} id={"parallax-layer-3"} className={"parallax-layer-3 parallax-layer"}></div>
-                    <div data-scroll-speed={2} data-scroll key={"parallax-layer-4"} id={"parallax-layer-4"} className={"parallax-layer-4 parallax-layer"}></div>
-                <div className="bg-[#1C2637] text-3xl sm:text-6xl flex min-h-screen flex-wrap justify-center items-center font-extrabold section-1">
+                    <div data-scroll-speed={5} data-scroll key={"parallax-layer-1-extender"} id={"parallax-layer-1-extender"} className={"parallax-layer-1-extender parallax-layer"}></div>
+                    <div data-scroll-speed={3} data-scroll key={"parallax-layer-2"} id={"parallax-layer-2"} className={"parallax-layer-2 parallax-layer"}></div>
+                    <div data-scroll-speed={1} data-scroll key={"parallax-layer-3"} id={"parallax-layer-3"} className={"parallax-layer-3 parallax-layer"}></div>
+                    <div data-scroll-speed={-1} data-scroll key={"parallax-layer-4"} id={"parallax-layer-4"} className={"parallax-layer-4 parallax-layer"}></div>
+                <div className="bg-[#1C2737] text-3xl sm:text-6xl flex min-h-screen flex-wrap justify-center items-center font-extrabold section-1">
                     LOL
                 </div>
             </div>
