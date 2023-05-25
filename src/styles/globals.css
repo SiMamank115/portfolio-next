@@ -44,24 +44,29 @@ div[data-aos][data-aos-easing][data-aos-delay].text-exit {
     @apply absolute;
 }
 .parallax-layer-1-extender {
-    @apply h-1/3 w-screen bg-[#1C2737] z-[100] top-[75vmin];
+    @apply w-screen bg-[#1C2737] z-[99];
+    @apply top-[calc(50vh+15vw)] h-[100vh] md:top-[calc(75vh+15vw)];
 }
 .parallax-layer-1 {
     @apply h-[80vh] w-screen bg-[url('/layer-1.webp')] bg-top bg-cover z-[100];
-    top: 15vmin;
+    @apply md:top-[calc(35vh-15vw)] h-[80vw] top-[calc(50vh-15vw)];
 }
 .parallax-layer-2 {
-    @apply h-[60vh] w-screen bg-[url('/layer-2.webp')] bg-left-top bg-cover z-[99];
-    top: 45vmin;
+    @apply w-screen bg-[url('/layer-2.webp')] bg-left-top bg-cover z-[98];
+    /* @apply max-md:h-[60vw] max-md:top-[60vh]; */
+    @apply md:top-[calc(30vh+7.5vw)] h-[60vw] top-[calc(40vh+15vw)];
 }
 .parallax-layer-3 {
-    @apply h-[80vh] w-screen bg-[url('/layer-3.webp')] bg-top bg-cover z-[98];
-    top: 20vmin;
+    @apply w-screen bg-[url('/layer-3.webp')] bg-top bg-cover z-[97];
+    @apply md:top-[calc(7.5vh+15vw)] h-[80vh] top-[calc(12.5vh+15vw)];
 }
 .parallax-layer-4 {
-    @apply h-[70vh] w-screen bg-[url('/layer-4.webp')] bg-top bg-cover z-[97];
-    top: 15vmin;
+    @apply h-[70vh] top-[15vh] w-screen bg-[url('/layer-4.webp')] bg-top bg-cover z-[96];
+    @apply md:top-[7.5vw] h-[70vh] top-[15vw];
 }
 .section-1 {
     @apply z-[200] relative;
+}
+.ref-button {
+    @apply fixed top-0;
 }
