@@ -23,6 +23,8 @@ export const SmoothScrollProvider = ({ children, options }) => {
           throw Error(`[SmoothScrollProvider]: ${error}`)
         }
       })()
+    } else {
+      scroll.stop();
     }
 
     return () => {

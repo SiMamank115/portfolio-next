@@ -8,7 +8,7 @@
     --background-end-rgb: #ced4da;
     --base-scroll: #adb5bd;
     --base-scroll-hover: #8e949b;
-    --innerHeight: 0
+    --innerHeight: 0;
 }
 .dark:root {
     --foreground-rgb: #f8f9fa;
@@ -45,28 +45,63 @@ div[data-aos][data-aos-easing][data-aos-delay].text-exit {
 }
 .parallax-layer-1-extender {
     @apply w-screen bg-[#1C2737] z-[99];
-    @apply top-[calc(50vh+15vw)] h-[100vh] md:top-[calc(75vh+15vw)];
+    @apply top-[calc(50vh+10vw)] h-[100vh] md:top-[calc(75vh+15vw)];
 }
 .parallax-layer-1 {
     @apply h-[80vh] w-screen bg-[url('/layer-1.webp')] bg-top bg-cover z-[100];
-    @apply md:top-[calc(35vh-15vw)] h-[80vw] top-[calc(50vh-15vw)];
+    @apply md:top-[calc(45vh-25vw)] h-[80vw] top-[calc(50vh-15vw)];
 }
 .parallax-layer-2 {
     @apply w-screen bg-[url('/layer-2.webp')] bg-left-top bg-cover z-[98];
-    /* @apply max-md:h-[60vw] max-md:top-[60vh]; */
-    @apply md:top-[calc(30vh+7.5vw)] h-[60vw] top-[calc(40vh+15vw)];
+    @apply md:top-[calc(40vh-2.5vw)] h-[60vw] top-[calc(57.5vh-15vw)];
 }
 .parallax-layer-3 {
     @apply w-screen bg-[url('/layer-3.webp')] bg-top bg-cover z-[97];
     @apply md:top-[calc(7.5vh+15vw)] h-[80vh] top-[calc(12.5vh+15vw)];
 }
 .parallax-layer-4 {
-    @apply h-[70vh] top-[15vh] w-screen bg-[url('/layer-4.webp')] bg-top bg-cover z-[96];
+    @apply w-screen bg-[url('/layer-4.webp')] bg-top bg-cover z-[96];
     @apply md:top-[7.5vw] h-[70vh] top-[15vw];
+}
+
+.parallax-layer-1:not(.init) {
+    transform: translate(0,100%) !important;
+
+}
+.parallax-layer-2:not(.init) {
+    transform: translate(0,100%) !important;
+}
+.parallax-layer-4:not(.init) {
+    transform: translate(100%,100%) !important;
+}
+.parallax-layer-3:not(.init) {
+    transform: translate(-100%,100%) !important;
 }
 .section-1 {
     @apply z-[200] relative;
 }
-.ref-button {
-    @apply fixed top-0;
+[data-scroll-section-inview],
+[data-scroll-section-inview] > * {
+    @apply will-change-transform;
+}
+.section-0 {
+    background: hsla(203, 21%, 68%, 1);
+    background: linear-gradient(180deg, #9db2bf 22.5%, #dde6ed 30%, #ffffff);
+    background-size: 100% 400%;
+    @apply transition-[background-position] duration-1000;
+}
+.bg-parallax {
+    background-position: 0% 30%;
+}
+.section-0:not(.bg-parallax) {
+    background-position: 0% 50%;
+}
+.parallax-introduce-image {
+    @apply w-full max-w-[450px] h-full max-h-[950px] mix-blend-multiply opacity-75;
+}
+.parallax-introduce-image > img {
+    @apply my-[-30px]
+}
+.parallax-introduce > div {
+    @apply overflow-hidden;
 }

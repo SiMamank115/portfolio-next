@@ -12,7 +12,6 @@ export default function App({ Component, pageProps }) {
     const [load, setLoad] = useState(false);
     const [imageloaded, setLmageloaded] = useState(false);
     useEffect(() => {
-        window.scrollTo(0, 0);
         async function fetchData() {
             await LoadImage(["layer-1.webp","layer-2.webp","layer-3.webp", "layer-4.webp"]);
             setLmageloaded(true);
