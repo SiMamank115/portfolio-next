@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import Compact from "@/helpers/classname";
 import { gsap } from "gsap";
 const nunito = Nunito({ subsets: ["latin"] });
-export default function Hero() {
+export default function Hero({ ok }) {
     const { scroll } = useContext(SmoothScrollContext);
     const animation = ["fade-up", "fade-down", "fade-right", "fade-left", "fade-up-right", "fade-up-left", "fade-down-right", "fade-down-left", "zoom-in-up", "zoom-in-down", "zoom-in-left", "zoom-in-right", "zoom-out-up", "zoom-out-down", "zoom-out-right", "zoom-out-left"],
         hero_text = "faiz ramadhan",
@@ -19,6 +19,8 @@ export default function Hero() {
     }
     useEffect(() => {
         if (textFinished == hero_text.length * 2) {
+            let addClass = ["init", "transition-[transform]", "duration-1000"],
+                removeClass = ["transition-[transform]", "duration-1000"];
             tl.to(".hero-content", {
                 duration: 0.5,
                 filter: "blur(16px)",
@@ -37,40 +39,57 @@ export default function Hero() {
             })
                 .to(".parallax-layer-1", {
                     duration: process.env.NEXT_PUBLIC_DEV ? 0.1 : 0.4,
-                    onStart: () => document.querySelector(".parallax-layer-1").classList.add("init", "transition-[transform]", "duration-1000"),
+                    onStart: () => document.querySelector(".parallax-layer-1").classList.add(...addClass) || document.querySelector(".parallax-layer-1-extender").classList.add(...addClass),
                     onComplete: () =>
-                        setTimeout(() => {
-                            document.querySelector(".parallax-layer-1").classList.remove("transition-[transform]", "duration-1000");
-                        }, process.env.NEXT_PUBLIC_DEV?0 : 600),
+                        setTimeout(
+                            () => {
+                                document.querySelector(".parallax-layer-1").classList.remove(...removeClass);
+                                document.querySelector(".parallax-layer-1-extender").classList.remove(...removeClass);
+                            },
+                            process.env.NEXT_PUBLIC_DEV ? 0 : 600
+                        ),
                 })
                 .to(".parallax-layer-2", {
                     duration: process.env.NEXT_PUBLIC_DEV ? 0.1 : 0.4,
-                    onStart: () => document.querySelector(".parallax-layer-2").classList.add("init", "transition-[transform]", "duration-1000"),
+                    onStart: () => document.querySelector(".parallax-layer-2").classList.add(...addClass),
                     onComplete: () =>
-                        setTimeout(() => {
-                            document.querySelector(".parallax-layer-2").classList.remove("transition-[transform]", "duration-1000");
-                        }, process.env.NEXT_PUBLIC_DEV?0 : 600),
+                        setTimeout(
+                            () => {
+                                document.querySelector(".parallax-layer-2").classList.remove(...removeClass);
+                            },
+                            process.env.NEXT_PUBLIC_DEV ? 0 : 600
+                        ),
                 })
                 .to(".parallax-layer-3", {
                     duration: process.env.NEXT_PUBLIC_DEV ? 0.1 : 0.4,
-                    onStart: () => document.querySelector(".parallax-layer-3").classList.add("init", "transition-[transform]", "duration-1000"),
+                    onStart: () => document.querySelector(".parallax-layer-3").classList.add(...addClass),
                     onComplete: () =>
-                        setTimeout(() => {
-                            document.querySelector(".parallax-layer-3").classList.remove("transition-[transform]", "duration-1000");
-                        }, process.env.NEXT_PUBLIC_DEV?0 : 600),
+                        setTimeout(
+                            () => {
+                                document.querySelector(".parallax-layer-3").classList.remove(...removeClass);
+                            },
+                            process.env.NEXT_PUBLIC_DEV ? 0 : 600
+                        ),
                 })
                 .to(".parallax-layer-4", {
                     duration: process.env.NEXT_PUBLIC_DEV ? 0.1 : 0.4,
-                    onStart: () => document.querySelector(".parallax-layer-4").classList.add("init", "transition-[transform]", "duration-1000"),
+                    onStart: () => document.querySelector(".parallax-layer-4").classList.add(...addClass),
                     onComplete: () =>
-                        setTimeout(() => {
-                            document.querySelector(".parallax-layer-4").classList.remove("transition-[transform]", "duration-1000");
-                        }, process.env.NEXT_PUBLIC_DEV?0 : 600),
+                        setTimeout(
+                            () => {
+                                document.querySelector(".parallax-layer-4").classList.remove(...removeClass);
+                            },
+                            process.env.NEXT_PUBLIC_DEV ? 0 : 600
+                        ),
                 })
                 .call(() => {
-                    setTimeout(() => {
-                        scroll.start();
-                    }, process.env.NEXT_PUBLIC_DEV? 0 : 1000);
+                    setTimeout(
+                        () => {
+                            scroll.start();
+                            scroll.update();
+                        },
+                        process.env.NEXT_PUBLIC_DEV ? 0 : 1000
+                    );
                 });
         }
     }, [textFinished]);
@@ -106,21 +125,16 @@ export default function Hero() {
             <button
                 className="fixed top-6"
                 onClick={() => {
-                    gsap.to(".parallax-layer-1", {
-                        duration: 1,
-                        onStartParams: document.querySelector(".parallax-layer-1"),
-                        onStart: (target) => console.log(1),
-                        onComplete: () => console.log(2),
-                    });
+                    console.log(process.env.NEXT_PUBLIC_DEV);
                 }}
             >
                 Debug
             </button>
-            <div data-scroll-speed={5} data-scroll key={"parallax-layer-1"} id={"parallax-layer-1"} className={(process.env.NEXT_PUBLIC_DEV?"hidden " : "") + "parallax-layer-1 parallax-layer"}></div>
-            <div data-scroll-speed={5} data-scroll key={"parallax-layer-1-extender"} id={"parallax-layer-1-extender"} className={(process.env.NEXT_PUBLIC_DEV?"hidden " : "") + "parallax-layer-1-extender parallax-layer"}></div>
-            <div data-scroll-speed={3.5} data-scroll key={"parallax-layer-2"} id={"parallax-layer-2"} className={(process.env.NEXT_PUBLIC_DEV?"hidden " : "") + "parallax-layer-2 parallax-layer"}></div>
-            <div data-scroll-speed={1} data-scroll key={"parallax-layer-3"} id={"parallax-layer-3"} className={(process.env.NEXT_PUBLIC_DEV?"hidden " : "") + "parallax-layer-3 parallax-layer"}></div>
-            <div data-scroll-speed={-1} data-scroll key={"parallax-layer-4"} id={"parallax-layer-4"} className={(process.env.NEXT_PUBLIC_DEV?"hidden " : "") + "parallax-layer-4 parallax-layer"}></div>
+            <div data-scroll-speed={5} data-scroll key={"parallax-layer-1"} id={"parallax-layer-1"} className={(process.env.NEXT_PUBLIC_PARTIAL ? "hidden " : "") + "parallax-layer-1 parallax-layer"}></div>
+            <div data-scroll-speed={5} data-scroll key={"parallax-layer-1-extender"} id={"parallax-layer-1-extender"} className={(process.env.NEXT_PUBLIC_PARTIAL ? "hidden " : "") + "parallax-layer-1-extender parallax-layer"}></div>
+            <div data-scroll-speed={3.5} data-scroll key={"parallax-layer-2"} id={"parallax-layer-2"} className={(process.env.NEXT_PUBLIC_PARTIAL ? "hidden " : "") + "parallax-layer-2 parallax-layer"}></div>
+            <div data-scroll-speed={1} data-scroll key={"parallax-layer-3"} id={"parallax-layer-3"} className={(process.env.NEXT_PUBLIC_PARTIAL ? "hidden " : "") + "parallax-layer-3 parallax-layer"}></div>
+            <div data-scroll-speed={-1} data-scroll key={"parallax-layer-4"} id={"parallax-layer-4"} className={(process.env.NEXT_PUBLIC_PARTIAL ? "hidden " : "") + "parallax-layer-4 parallax-layer"}></div>
         </div>
     );
 }

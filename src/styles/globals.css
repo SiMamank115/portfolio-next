@@ -44,16 +44,22 @@ div[data-aos][data-aos-easing][data-aos-delay].text-exit {
     @apply absolute;
 }
 .parallax-layer-1-extender {
+    --hg : 100vh;
     @apply w-screen bg-[#1C2737] z-[99];
-    @apply top-[calc(50vh+10vw)] h-[100vh] md:top-[calc(75vh+15vw)];
+    /* @apply top-[calc(50vh+10vw)] h-[100vh] md:top-[calc(75vh+15vw)]; */
+    @apply h-[var(--hg)] bottom-[calc(var(--hg)/-1.5)];
 }
 .parallax-layer-1 {
-    @apply h-[80vh] w-screen bg-[url('/layer-1.webp')] bg-top bg-cover z-[100];
-    @apply md:top-[calc(45vh-25vw)] h-[80vw] top-[calc(50vh-15vw)];
+    --hg : 80vh;
+    @apply w-screen bg-[url('/layer-1.webp')] bg-top bg-cover z-[100];
+    /* @apply md:top-[calc(45vh-25vw)] h-[80vw] top-[calc(50vh-15vw)]; */
+    @apply h-[var(--hg)] bottom-[calc(var(--hg)/-5)] lg:bottom-[calc(var(--hg)/-8)] xl:bottom-[calc(var(--hg)/-20)] 2xl:bottom-[0];
 }
 .parallax-layer-2 {
+    --hg : 60vh;
     @apply w-screen bg-[url('/layer-2.webp')] bg-left-top bg-cover z-[98];
-    @apply md:top-[calc(40vh-2.5vw)] h-[60vw] top-[calc(57.5vh-15vw)];
+    /* @apply md:top-[calc(40vh-2.5vw)] h-[60vw] top-[calc(57.5vh-15vw)]; */
+    @apply h-[var(--hg)] bottom-[calc(var(--hg)/-3.6)] lg:bottom-[calc(var(--hg)/-4.2)] xl:bottom-[calc(var(--hg)/-4.5)] 2xl:bottom-[calc(var(--hg)/-5)];
 }
 .parallax-layer-3 {
     @apply w-screen bg-[url('/layer-3.webp')] bg-top bg-cover z-[97];
@@ -64,24 +70,23 @@ div[data-aos][data-aos-easing][data-aos-delay].text-exit {
     @apply md:top-[7.5vw] h-[70vh] top-[15vw];
 }
 
-.parallax-layer-1:not(.init) {
-    transform: translate(0,100%) !important;
-
+.parallax-layer-1:not(.init), .parallax-layer-1:not(.init) ~ .parallax-layer-1-extender {
+    transform: translate(0, 150vh) !important;
 }
 .parallax-layer-2:not(.init) {
-    transform: translate(0,100%) !important;
+    transform: translate(0, 150vh) !important;
 }
 .parallax-layer-4:not(.init) {
-    transform: translate(100%,100%) !important;
+    transform: translate(100vw, 100vh) !important;
 }
 .parallax-layer-3:not(.init) {
-    transform: translate(-100%,100%) !important;
+    transform: translate(-100vw, 100vh) !important;
 }
 .section-1 {
     @apply z-[200] relative;
 }
 [data-scroll-section-inview],
-[data-scroll-section-inview] > * {
+[data-scroll-section-inview] * {
     @apply will-change-transform;
 }
 .section-0 {
@@ -100,8 +105,23 @@ div[data-aos][data-aos-easing][data-aos-delay].text-exit {
     @apply w-full max-w-[450px] h-full max-h-[950px] mix-blend-multiply opacity-75;
 }
 .parallax-introduce-image > img {
-    @apply my-[-30px]
+    @apply my-[-30px];
 }
 .parallax-introduce > div {
     @apply overflow-hidden;
+}
+.card {
+    @apply min-w-[100px] grow flex rounded py-5 px-3 justify-center border-2 border-t-[30px] bg-[#f8f9fa22];
+}
+.card[type="1"] {
+    @apply border-[#adb5bd];
+}
+.card[type="2"] {
+    @apply border-[#4361ee];
+}
+.card[type="3"] {
+    @apply border-[#7209b7];
+}
+.card[type="4"] {
+    @apply border-[#f72585];
 }
