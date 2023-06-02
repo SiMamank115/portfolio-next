@@ -4,6 +4,7 @@ import "@/styles/fonts.css";
 import "@/styles/globals.css";
 import "@/styles/loco.css";
 import "aos/dist/aos.css";
+import { Head } from "next/document";
 import { Quicksand } from "next/font/google";
 import { useEffect, useState } from "react";
 

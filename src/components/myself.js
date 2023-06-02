@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import data from "../data/skills.json";
+import { SmoothScrollContext } from "./smoothContext";
 export default function MySelf() {
+    const { scroll } = useContext(SmoothScrollContext);
     const Skills = data.Skills;
     const [skill, setSkill] = useState([]);
-    const skillspeed = [1.5,-1.5]; // max min
-    const skilldelay = [.5,0]; // max min
+    const skillspeed = [1.5, -1.5]; // max min
+    const skilldelay = [0.5, 0]; // max min
     useEffect(() => {
         Skills.forEach((e, x) => {
             e.data.forEach((r, y) => {
@@ -16,8 +18,15 @@ export default function MySelf() {
             });
         });
     }, []);
+    useEffect(() => {
+        console.log(scroll);
+        setTimeout(() => {
+            scroll?.start();
+            scroll?.update();
+        }, 100);
+    }, [scroll]);
     return (
-        <div data-scroll-section className="bg-gradient-to-b from-[#1C2737] to-[#07090d] px-8 py-32 flex min-h-[100vh] flex-wrap justify-around items-center section-1">
+        <div data-scroll-section className="bg-gradient-to-b from-[#1C2737] via-[#07090d] to-[#07090d] to-black px-8 py-32 flex min-h-[100vh] flex-wrap justify-around items-center section-1">
             <div data-scroll data-scroll-speed={4} className="parallax-introduce sm:max-w-[45%] max-w-[80%] mb-[-200px] sm:mb-0">
                 <div>
                     <div data-scroll data-scroll-speed={-1.5} className="parallax-introduce-image">
