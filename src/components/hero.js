@@ -85,8 +85,8 @@ export default function Hero({ ok }) {
                 .call(() => {
                     setTimeout(
                         () => {
-                            scroll.start();
-                            scroll.update();
+                            scroll.init();
+                            console.log("start");
                         },
                         process.env.NEXT_PUBLIC_DEV ? 0 : 1000
                     );
@@ -118,7 +118,7 @@ export default function Hero({ ok }) {
     // console.log(scroll?.init);
     return (
         <div data-scroll-section className="section-0">
-            <div className="text-3xl sm:text-6xl flex min-h-screen flex-wrap justify-center items-center font-extrabold hero-content">{text_animation}</div>
+            <div className="text-xl sm:text-6xl flex min-h-screen flex-wrap justify-center items-center font-extrabold hero-content">{text_animation}</div>
             <button className="fixed top-0" onClick={() => scroll?.destroy?.() || scroll?.init?.()}>
                 Refresh scroll
             </button>

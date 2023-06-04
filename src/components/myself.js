@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import data from "../data/skills.json";
 import { SmoothScrollContext } from "./smoothContext";
+import random from "@/helpers/random";
+import Stars from "./stars";
 export default function MySelf() {
     const { scroll } = useContext(SmoothScrollContext);
     const Skills = data.Skills;
@@ -11,7 +13,7 @@ export default function MySelf() {
         Skills.forEach((e, x) => {
             e.data.forEach((r, y) => {
                 skill.push(
-                    <div key={"skill-" + r.replace(" ", "-")} data-scroll data-scroll-speed={Math.random() * (skillspeed[0] - skillspeed[1]) + skillspeed[1]} data-scroll-delay={Math.random() * (skilldelay[0] - skilldelay[1]) + skilldelay[1]} className="card" type={(x + 1).toString()}>
+                    <div key={"skill-" + r.replace(" ", "-")} data-scroll data-scroll-speed={random(...skillspeed)} data-scroll-delay={random(...skilldelay)} className="card" type={(x + 1).toString()}>
                         {r}
                     </div>
                 );
@@ -19,14 +21,14 @@ export default function MySelf() {
         });
     }, []);
     useEffect(() => {
-        console.log(scroll);
         setTimeout(() => {
             scroll?.start();
             scroll?.update();
         }, 100);
     }, [scroll]);
     return (
-        <div data-scroll-section className="bg-gradient-to-b from-[#1C2737] via-[#07090d] to-[#07090d] to-black px-8 py-32 flex min-h-[100vh] flex-wrap justify-around items-center section-1">
+        <div data-scroll-section className="bg-gradient-to-b from-[#1C2737] via-[#07090d] to-[#07090d] px-8 py-32 flex min-h-[100vh] flex-wrap justify-around items-center section-1">
+            <Stars />
             <div data-scroll data-scroll-speed={4} className="parallax-introduce sm:max-w-[45%] max-w-[80%] mb-[-200px] sm:mb-0">
                 <div>
                     <div data-scroll data-scroll-speed={-1.5} className="parallax-introduce-image">
@@ -46,11 +48,23 @@ export default function MySelf() {
                 </p>
             </div>
             <div className="flex w-full my-[30rem] justify-around flex-wrap">
-                <div data-scroll data-scroll-speed={4} className="font-bold text-8xl text-gray-200 md:w-[45%] md:mb-0 mb-[100px] w-full flex justify-center items-center">
+                <div data-scroll data-scroll-speed={4} className="skill-text font-bold text-8xl text-gray-200 md:w-[45%] md:mb-0 mb-[100px] w-full flex justify-center items-center">
                     skills
                 </div>
                 <div className="grow md:max-w-[45%] gap-x-4 gap-y-6 flex flex-wrap text-gray-100 lg:text-xl max-w-full">{skill}</div>
             </div>
+            <div className="flex w-full my-[30rem] justify-around flex-wrap">
+                <div className="grow md:max-w-[45%] gap-x-4 gap-y-6 flex flex-wrap text-gray-100 lg:text-xl max-w-full">LOL</div>
+                <div data-scroll data-scroll-speed={4} className="skill-text font-bold text-8xl text-gray-200 md:w-[45%] md:mb-0 mb-[100px] w-full flex justify-center items-center">
+                    skills
+                </div>
+            </div>
         </div>
     );
 }
+// "color": "#",
+// "title": "",
+// "body": "",
+// "button": false,
+// "button_link": "/",
+// "button_text": ""

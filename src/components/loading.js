@@ -1,12 +1,24 @@
 import Aos from "aos";
-import { useEffect, useState } from "react";
 export default function Loading({ loaded }) {
     let loadedDelay = process.env.NEXT_PUBLIC_DEV ? 0 : 1000;
     if (loaded) {
         setTimeout(() => {
             document.querySelector(".loading-screen")?.remove();
             Aos.init();
-            document.querySelector(":root").style.setProperty("--innerHeight", window.innerHeight + "px");
+            let observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add("aos-animate");
+                        }, entry.target.dataset.aosDelay ?? 0);
+                    } else {
+                        entry.target.classList.remove("aos-animate");
+                    }
+                });
+            });
+            document.querySelectorAll("[data-aos]").forEach((aosElem) => {
+                observer.observe(aosElem);
+            });
         }, loadedDelay);
     }
     return (

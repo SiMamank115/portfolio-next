@@ -1,0 +1,49 @@
+{
+    "portofolio": [
+        {
+            "color": "#adb5bd",
+            "title": "Gallonku",
+            "body": "Sebuah aplikasi penyetoran data semi dinamis berbasis native HTML yang menggunakan Firebase sebagai databasenya."
+        },
+        {
+            "color": "#adb5bd",
+            "title": "Komik App",
+            "body": "Merupakan aplikasi pribadi untuk menyimpan data komik, berbasis native HTML dan menggunakan Firebase."
+        },
+        {
+            "color": "#4361ee",
+            "title": "Modul Belajar",
+            "body": "Adalah aplikasi SPA statis menggunakan HTML, CSS, dan Javascript yang dikembangkan untuk kebutuhan tugas pribadi."
+        },
+        {
+            "color": "#4361ee",
+            "title": "Fulla Cookies",
+            "body": "Merupakan website Company Profile berbasis PHP dengan menggunakan framework Codeigniter."
+        },
+        {
+            "color": "#4361ee",
+            "title": "Games",
+            "body": "Projek pribadi untuk mengasah skill Problem solving. Mengembangkan game mulai dari flappy bird, suit, hingga tetris menggunakan framework P5.js"
+        },
+        {
+            "color": "#7209b7",
+            "title": "Web Kelas",
+            "body": "Website kolaborasi bersama teman sekelas Menggunakan framework Laravel dan untukanimasi antar page menggunakan Barba js"
+        },
+        {
+            "color": "#7209b7",
+            "title": "Bot",
+            "body": "Saya berpartisipasi dengan sebuah tim untuk mengembangkan Profile Bot Whatsapp menggunakan Node.js"
+        },
+        {
+            "color": "#f72585",
+            "title": "Menjasa",
+            "body": "Website kolaborasi untuk merekrut dan mencari pekerjaan menggunakan Next js, Tailwind, dan Supabase."
+        },
+        {
+            "color": "#f72585",
+            "title": "Porto",
+            "body": "Website ini yang mana dikembangkan dengan Next js dan Locomotive Scroll."
+        }
+    ]
+}
