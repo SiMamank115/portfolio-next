@@ -4,7 +4,7 @@ import MySelf from "@/components/myself";
 export default function Home() {
     return (
         <SmoothScrollProvider options={{ smooth: true, smoothMobile: true }}>
-            <Hero />
+            {/* <Hero /> */}
             <MySelf />
         </SmoothScrollProvider>
     );

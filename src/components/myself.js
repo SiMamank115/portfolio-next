@@ -1,29 +1,50 @@
 import { useContext, useEffect, useState } from "react";
-import data from "../data/skills.json";
+import skillInfo from "../data/skills.json";
+import portoInfo from "../data/porto.json";
 import { SmoothScrollContext } from "./smoothContext";
 import random from "@/helpers/random";
 import Stars from "./stars";
 export default function MySelf() {
     const { scroll } = useContext(SmoothScrollContext);
-    const Skills = data.Skills;
+    const Skills = skillInfo.skills;
     const [skill, setSkill] = useState([]);
-    const skillspeed = [1.5, -1.5]; // max min
-    const skilldelay = [0.5, 0]; // max min
+    const speed = [1.5, -1.5]; // max min
+    const delay = [0.5, 0]; // max min
     useEffect(() => {
         Skills.forEach((e, x) => {
             e.data.forEach((r, y) => {
                 skill.push(
-                    <div key={"skill-" + r.replace(" ", "-")} data-scroll data-scroll-speed={random(...skillspeed)} data-scroll-delay={random(...skilldelay)} className="card" type={(x + 1).toString()}>
+                    <div key={"skill-" + r.replace(" ", "-")} data-scroll data-scroll-speed={random(...speed)} data-scroll-delay={random(...delay)} className="card" type={(x + 1).toString()}>
                         {r}
                     </div>
                 );
             });
         });
     }, []);
+    const Porto = portoInfo.portofolio;
+    const [porto, setPorto] = useState([]);
+    const speed2 = [.75, -.75]; // max min
+    const delay2 = [0.25, 0]; // max min
+    useEffect(() => {
+        Porto.forEach((e, x) => {
+            porto.push(
+                !e.link ? (
+                    <div key={"porto-" + e.title.replace(" ", "-")} data-scroll data-scroll-speed={random(...speed2)} data-scroll-delay={random(...delay2)} className="porto flex-wrap" type={e.type.toString()}>
+                        <div className="porto-header">{e.title}</div>
+                        <div className="porto-body" dangerouslySetInnerHTML={{ __html: e.body }}></div>
+                    </div>
+                ) : (
+                    <a target="_blank" href={e.link} key={"porto-" + e.title.replace(" ", "-")} data-scroll data-scroll-speed={random(...speed2)} data-scroll-delay={random(...delay2)} className="porto flex-wrap" type={e.type.toString()}>
+                        <div className="porto-header">{e.title}</div>
+                        <div className="porto-body" dangerouslySetInnerHTML={{ __html: e.body }}></div>
+                    </a>
+                )
+            );
+        });
+    }, []);
     useEffect(() => {
         setTimeout(() => {
-            scroll?.start();
-            scroll?.update();
+            scroll?.init();
         }, 100);
     }, [scroll]);
     return (
@@ -47,17 +68,17 @@ export default function MySelf() {
                     <strong>Menyukai</strong> hal - hal yang <strong>berelasi</strong> dengan kata <strong>digital</strong>. Termasuk diantara nya adalah <strong>Game</strong> dan <strong>Film</strong>. Bermimpi untuk bisa <strong>kuliah</strong> di <strong>luar negri</strong> dan bekerja di mega <strong>company</strong> / <strong>start up</strong>.
                 </p>
             </div>
-            <div className="flex w-full my-[30rem] justify-around flex-wrap">
-                <div data-scroll data-scroll-speed={4} className="skill-text font-bold text-8xl text-gray-200 md:w-[45%] md:mb-0 mb-[100px] w-full flex justify-center items-center">
+            <div className="flex w-full mt-[30rem] justify-around flex-wrap">
+                <div data-scroll data-scroll-speed={4} className="skill-text font-bold text-8xl text-gray-200 md:w-[45%] md:mb-0 mb-[50px] w-full flex justify-center items-center">
                     skills
                 </div>
                 <div className="grow md:max-w-[45%] gap-x-4 gap-y-6 flex flex-wrap text-gray-100 lg:text-xl max-w-full">{skill}</div>
             </div>
-            <div className="flex w-full my-[30rem] justify-around flex-wrap">
-                <div className="grow md:max-w-[45%] gap-x-4 gap-y-6 flex flex-wrap text-gray-100 lg:text-xl max-w-full">LOL</div>
-                <div data-scroll data-scroll-speed={4} className="skill-text font-bold text-8xl text-gray-200 md:w-[45%] md:mb-0 mb-[100px] w-full flex justify-center items-center">
-                    skills
+            <div className="flex w-full mt-[30rem] justify-around flex-wrap">
+                <div data-scroll data-scroll-speed={4} className="skill-text font-bold text-8xl text-gray-200 mb-[50px] w-full flex justify-center items-center">
+                    projects
                 </div>
+                <div className="grow gap-x-4 gap-y-6 flex flex-wrap text-gray-100 lg:text-xl max-w-full">{porto}</div>
             </div>
         </div>
     );

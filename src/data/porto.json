@@ -1,49 +1,54 @@
 {
     "portofolio": [
         {
-            "color": "#adb5bd",
+            "type": 1,
             "title": "Gallonku",
-            "body": "Sebuah aplikasi penyetoran data semi dinamis berbasis native HTML yang menggunakan Firebase sebagai databasenya."
+            "body": "Sebuah aplikasi penyetoran data semi dinamis berbasis native HTML yang menggunakan <strong>Firebase</strong> sebagai databasenya."
         },
         {
-            "color": "#adb5bd",
+            "type": 1,
             "title": "Komik App",
-            "body": "Merupakan aplikasi pribadi untuk menyimpan data komik, berbasis native HTML dan menggunakan Firebase."
+            "body": "Merupakan aplikasi pribadi untuk menyimpan data komik, berbasis native <strong>HTML</strong> dan menggunakan Firebase."
         },
         {
-            "color": "#4361ee",
+            "type": 2,
             "title": "Modul Belajar",
-            "body": "Adalah aplikasi SPA statis menggunakan HTML, CSS, dan Javascript yang dikembangkan untuk kebutuhan tugas pribadi."
+            "body": "Adalah aplikasi <strong>SPA</strong> statis menggunakan HTML, CSS, dan Javascript yang dikembangkan untuk kebutuhan <strong>tugas pribadi</strong>.",
+            "link": "https://github.com/SiMamank115/DMI"
         },
         {
-            "color": "#4361ee",
+            "type": 2,
             "title": "Fulla Cookies",
-            "body": "Merupakan website Company Profile berbasis PHP dengan menggunakan framework Codeigniter."
+            "body": "Merupakan website <strong>Company Profile</strong> berbasis PHP dengan menggunakan framework Codeigniter.",
+            "link" : "https://github.com/SiMamank115/fulla-cookies"
         },
         {
-            "color": "#4361ee",
+            "type": 2,
             "title": "Games",
-            "body": "Projek pribadi untuk mengasah skill Problem solving. Mengembangkan game mulai dari flappy bird, suit, hingga tetris menggunakan framework P5.js"
+            "body": "Projek pribadi untuk mengasah skill <strong>Problem solving</strong>. Mengembangkan game mulai dari flappy bird, suit, hingga tetris menggunakan framework P5.js",
+            "link": "https://github.com/SiMamank115/tetod"
         },
         {
-            "color": "#7209b7",
+            "type": 3,
             "title": "Web Kelas",
-            "body": "Website kolaborasi bersama teman sekelas Menggunakan framework Laravel dan untukanimasi antar page menggunakan Barba js"
+            "body": "Website kolaborasi bersama teman sekelas Menggunakan framework <strong>Laravel</strong> dan untuk animasi antar page menggunakan <strong>Barba js</strong>",
+            "link" : "http://creativemm3.my.id/"
         },
         {
-            "color": "#7209b7",
+            "type": 3,
             "title": "Bot",
-            "body": "Saya berpartisipasi dengan sebuah tim untuk mengembangkan Profile Bot Whatsapp menggunakan Node.js"
+            "body": "Saya berpartisipasi dengan sebuah tim untuk mengembangkan <strong>Profile Bot Whatsapp</strong> menggunakan Node.js"
         },
         {
-            "color": "#f72585",
+            "type": 4,
             "title": "Menjasa",
-            "body": "Website kolaborasi untuk merekrut dan mencari pekerjaan menggunakan Next js, Tailwind, dan Supabase."
+            "body": "Website kolaborasi untuk merekrut dan mencari pekerjaan menggunakan <strong>Next js, Tailwind, dan Supabase</strong>."
         },
         {
-            "color": "#f72585",
+            "type": 4,
             "title": "Porto",
-            "body": "Website ini yang mana dikembangkan dengan Next js dan Locomotive Scroll."
+            "body": "Website ini. yang mana dikembangkan dengan <strong>Next js</strong> dan <strong>Locomotive Scroll</strong>.",
+            "link" : "https://github.com/SiMamank115/portfolio-next"
         }
     ]
 }

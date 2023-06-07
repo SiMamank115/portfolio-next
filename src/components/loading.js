@@ -13,6 +13,9 @@ export default function Loading({ loaded }) {
                         }, entry.target.dataset.aosDelay ?? 0);
                     } else {
                         entry.target.classList.remove("aos-animate");
+                        setTimeout(() => {
+                            entry.target.classList.remove("aos-animate");
+                        }, entry.target.dataset.aosDelay ?? 0);
                     }
                 });
             });

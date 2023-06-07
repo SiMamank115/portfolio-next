@@ -1,5 +1,5 @@
 {
-    "Skills": [
+    "skills": [
         { "color": "#adb5bd", "data": ["Python", "Laravel", "Posgress SQL", "Firebase", "Codeigniter", "Chakra UI", "Headless UI"] },
         { "color": "#4361ee", "data": ["React", "Next JS", "API", "Tailwind", "MySQL", "Bootstrap"] },
         { "color": "#7209b7", "data": ["English", "HTML", "CSS", "Node JS"] },
