@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
     --foreground-rgb: #0a0908;
     --background-start-rgb: #ced4da;
@@ -112,10 +111,13 @@ div[data-aos][data-aos-easing][data-aos-delay].text-exit {
     @apply overflow-hidden;
 }
 .card {
-    @apply min-w-[100px] grow flex rounded py-5 px-3 justify-center border-2 border-t-[30px] bg-[#27292D];
+    @apply transition-[backdrop-filter,background] min-w-[100px] grow flex rounded py-5 px-3 justify-center border-2 border-t-[30px] bg-[#27292D];
 }
 .porto {
-    @apply ring-offset-[#07090D] ring-offset-0 ring-0 grow flex rounded pb-5 justify-center border-2 bg-[#27292D] w-min min-w-[400px] max-w-full;
+    @apply transition-[backdrop-filter,background] ring-offset-[#07090D] ring-offset-0 ring-0 grow flex rounded pb-5 justify-center border-2 bg-[#27292D] w-min min-w-[400px] max-w-full;
+}
+.card:hover,.porto:hover {
+    @apply bg-[#27292D]/[.20] backdrop-blur-sm;
 }
 a.porto {
     @apply transition-[box-shadow,border] ring-[#d8f3dc];
@@ -156,34 +158,4 @@ a.porto:hover {
 }
 .porto-body {
     @apply px-3;
-}
-.star {
-    @apply absolute bg-center bg-cover;
-}
-.star[data-img="1"] {
-    @apply bg-[url("/stars/1.webp")];
-}
-.star[data-img="2"] {
-    @apply bg-[url("/stars/2.webp")];
-}
-.star[data-img="3"] {
-    @apply bg-[url("/stars/3.webp")];
-}
-.star[data-img="4"] {
-    @apply bg-[url("/stars/4.webp")];
-}
-.star[data-img="5"] {
-    @apply bg-[url("/stars/5.webp")];
-}
-.star[data-img="6"] {
-    @apply bg-[url("/stars/6.webp")];
-}
-.star[data-img="7"] {
-    @apply bg-[url("/stars/7.webp")];
-}
-.star[data-img="8"] {
-    @apply bg-[url("/stars/8.webp")];
-}
-.star[data-img="9"] {
-    @apply bg-[url("/stars/9.webp")];
 }

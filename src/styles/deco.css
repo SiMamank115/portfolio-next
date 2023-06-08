@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.star,
+.planet {
+    @apply absolute bg-center bg-cover;
+}
+.planet {
+    mask-position: center center;
+    mask-size: contain;
+    mask-repeat: no-repeat
+}
+.star[data-img="1"] {
+    @apply bg-[url("/stars/1.webp")];
+}
+.star[data-img="2"] {
+    @apply bg-[url("/stars/2.webp")];
+}
+.star[data-img="3"] {
+    @apply bg-[url("/stars/3.webp")];
+}
+.star[data-img="4"] {
+    @apply bg-[url("/stars/4.webp")];
+}
+.star[data-img="5"] {
+    @apply bg-[url("/stars/5.webp")];
+}
+.star[data-img="6"] {
+    @apply bg-[url("/stars/6.webp")];
+}
+.star[data-img="7"] {
+    @apply bg-[url("/stars/7.webp")];
+}
+.star[data-img="8"] {
+    @apply bg-[url("/stars/8.webp")];
+}
+.star[data-img="9"] {
+    @apply bg-[url("/stars/9.webp")];
+}
+.planet[data-img="1"] {
+    mask-image: url("/planets/1.webp");
+}
+.planet[data-img="2"] {
+    mask-image: url("/planets/2.webp");
+}
+.planet[data-img="3"] {
+    mask-image: url("/planets/3.webp");
+}
+.planet[data-img="4"] {
+    mask-image: url("/planets/4.webp");
+}
+.planet[data-img="5"] {
+    mask-image: url("/planets/5.webp");
+}
+.planet[data-img="6"] {
+    mask-image: url("/planets/6.webp");
+}

@@ -3,7 +3,7 @@ import skillInfo from "../data/skills.json";
 import portoInfo from "../data/porto.json";
 import { SmoothScrollContext } from "./smoothContext";
 import random from "@/helpers/random";
-import Stars from "./stars";
+import Decoration from "./deco";
 export default function MySelf() {
     const { scroll } = useContext(SmoothScrollContext);
     const Skills = skillInfo.skills;
@@ -24,7 +24,7 @@ export default function MySelf() {
     const Porto = portoInfo.portofolio;
     const [porto, setPorto] = useState([]);
     const speed2 = [.75, -.75]; // max min
-    const delay2 = [0.25, 0]; // max min
+    const delay2 = [1, 0]; // max min
     useEffect(() => {
         Porto.forEach((e, x) => {
             porto.push(
@@ -49,7 +49,7 @@ export default function MySelf() {
     }, [scroll]);
     return (
         <div data-scroll-section className="bg-gradient-to-b from-[#1C2737] via-[#07090d] to-[#07090d] px-8 py-32 flex min-h-[100vh] flex-wrap justify-around items-center section-1">
-            <Stars />
+            <Decoration />
             <div data-scroll data-scroll-speed={4} className="parallax-introduce sm:max-w-[45%] max-w-[80%] mb-[-200px] sm:mb-0">
                 <div>
                     <div data-scroll data-scroll-speed={-1.5} className="parallax-introduce-image">

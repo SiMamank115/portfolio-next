@@ -2,6 +2,7 @@ import Loading from "@/components/loading";
 import LoadImage from "@/components/preload";
 import "@/styles/fonts.css";
 import "@/styles/globals.css";
+import "@/styles/deco.css";
 import "@/styles/loco.css";
 import "aos/dist/aos.css";
 import { Quicksand } from "next/font/google";
