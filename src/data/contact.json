@@ -1,0 +1,29 @@
+{
+    "contacts": [
+        {
+            "name": "Github",
+            "link": "https://github.com/SiMamank115",
+            "img": "github"
+        },
+        {
+            "name": "Email",
+            "link": "mailto:faeest.115@gmail.com",
+            "img": "email"
+        },
+        {
+            "name": "Whatsapp",
+            "link": "https://wa.link/wx6c4j",
+            "img": "whatsapp"
+        },
+        {
+            "name": "Instagram",
+            "link": "https://www.instagram.com/faeest/",
+            "img": "instagram"
+        },
+        {
+            "name": "Phone",
+            "tooltip": "+62 851-7442-7445",
+            "img": "phone"
+        }
+    ]
+}

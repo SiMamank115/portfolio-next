@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import skillInfo from "../data/skills.json";
 import portoInfo from "../data/porto.json";
+import contactInfo from "../data/contact.json";
 import { SmoothScrollContext } from "./smoothContext";
 import random from "@/helpers/random";
 import Decoration from "./deco";
@@ -14,7 +15,7 @@ export default function MySelf() {
         Skills.forEach((e, x) => {
             e.data.forEach((r, y) => {
                 skill.push(
-                    <div key={"skill-" + r.replace(" ", "-")} data-scroll data-scroll-speed={random(...speed)} data-scroll-delay={random(...delay)} className="card" type={(x + 1).toString()}>
+                    <div key={"skill-" + r.replace(" ", "-")} data-scroll data-scroll-speed={random(...speed)} data-scroll-delay={random(...delay)} className="skill" type={(x + 1).toString()}>
                         {r}
                     </div>
                 );
@@ -23,7 +24,7 @@ export default function MySelf() {
     }, []);
     const Porto = portoInfo.portofolio;
     const [porto, setPorto] = useState([]);
-    const speed2 = [.75, -.75]; // max min
+    const speed2 = [0.75, -0.75]; // max min
     const delay2 = [1, 0]; // max min
     useEffect(() => {
         Porto.forEach((e, x) => {
@@ -37,6 +38,23 @@ export default function MySelf() {
                     <a target="_blank" href={e.link} key={"porto-" + e.title.replace(" ", "-")} data-scroll data-scroll-speed={random(...speed2)} data-scroll-delay={random(...delay2)} className="porto flex-wrap" type={e.type.toString()}>
                         <div className="porto-header">{e.title}</div>
                         <div className="porto-body" dangerouslySetInnerHTML={{ __html: e.body }}></div>
+                    </a>
+                )
+            );
+        });
+    }, []);
+    const Contact = contactInfo.contacts;
+    const [contact, setContact] = useState([]);
+    useEffect(() => {
+        Contact.forEach((e, x) => {
+            contact.push(
+                !e.link ? (
+                    <div key={"contact-" + e.name.toLowerCase().replace(" ", "-")} data-scroll data-scroll-speed={random(...speed2)} data-scroll-delay={random(...delay2)} className="contact contact-tooltip">
+                        <div data-img={e.img} className="contact-icon"></div> {e.name}
+                    </div>
+                ) : (
+                    <a target="_blank" href={e.link} key={"contact-" + e.name.toLowerCase().replace(" ", "-")} data-scroll data-scroll-speed={random(...speed2)} data-scroll-delay={random(...delay2)} className="contact">
+                        <div data-img={e.img} className="contact-icon"></div> {e.name}
                     </a>
                 )
             );
@@ -68,7 +86,7 @@ export default function MySelf() {
                     <strong>Menyukai</strong> hal - hal yang <strong>berelasi</strong> dengan kata <strong>digital</strong>. Termasuk diantara nya adalah <strong>Game</strong> dan <strong>Film</strong>. Bermimpi untuk bisa <strong>kuliah</strong> di <strong>luar negri</strong> dan bekerja di mega <strong>company</strong> / <strong>start up</strong>.
                 </p>
             </div>
-            <div className="flex w-full mt-[30rem] justify-around flex-wrap">
+            {/* <div className="flex w-full mt-[30rem] justify-around flex-wrap">
                 <div data-scroll data-scroll-speed={4} className="skill-text font-bold text-8xl text-gray-200 md:w-[45%] md:mb-0 mb-[50px] w-full flex justify-center items-center">
                     skills
                 </div>
@@ -78,7 +96,13 @@ export default function MySelf() {
                 <div data-scroll data-scroll-speed={4} className="skill-text font-bold text-8xl text-gray-200 mb-[50px] w-full flex justify-center items-center">
                     projects
                 </div>
-                <div className="grow gap-x-4 gap-y-6 flex flex-wrap text-gray-100 lg:text-xl max-w-full">{porto}</div>
+                <div className="grow gap-x-8 gap-y-12 flex flex-wrap text-gray-100 lg:text-xl max-w-full">{porto}</div>
+            </div> */}
+            <div className="flex w-full mt-[30rem] justify-around flex-wrap">
+                <div className="grow md:max-w-[45%] gap-x-4 gap-y-6 flex flex-wrap text-gray-100 lg:text-xl max-w-full">{contact}</div>
+                <div data-scroll data-scroll-speed={4} className="skill-text font-bold text-8xl text-gray-200 md:w-[45%] md:mb-0 mb-[50px] w-full flex justify-center items-center">
+                    skills
+                </div>
             </div>
         </div>
     );

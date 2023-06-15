@@ -110,13 +110,14 @@ div[data-aos][data-aos-easing][data-aos-delay].text-exit {
 .parallax-introduce > div {
     @apply overflow-hidden;
 }
-.card {
+.skill {
     @apply transition-[backdrop-filter,background] min-w-[100px] grow flex rounded py-5 px-3 justify-center border-2 border-t-[30px] bg-[#27292D];
 }
 .porto {
     @apply transition-[backdrop-filter,background] ring-offset-[#07090D] ring-offset-0 ring-0 grow flex rounded pb-5 justify-center border-2 bg-[#27292D] w-min min-w-[400px] max-w-full;
 }
-.card:hover,.porto:hover {
+.skill:hover,
+.porto:hover {
     @apply bg-[#27292D]/[.20] backdrop-blur-sm;
 }
 a.porto {
@@ -125,19 +126,19 @@ a.porto {
 a.porto:hover {
     @apply ring-[5px];
 }
-.card[type="1"],
+.skill[type="1"],
 .porto[type="1"] {
     @apply border-[#adb5bd];
 }
-.card[type="2"],
+.skill[type="2"],
 .porto[type="2"] {
     @apply border-[#4361ee];
 }
-.card[type="3"],
+.skill[type="3"],
 .porto[type="3"] {
     @apply border-[#7209b7];
 }
-.card[type="4"],
+.skill[type="4"],
 .porto[type="4"] {
     @apply border-[#f72585];
 }
@@ -158,4 +159,38 @@ a.porto:hover {
 }
 .porto-body {
     @apply px-3;
+}
+.contact {
+    @apply transition-[backdrop-filter,background] min-w-[100px] grow flex rounded py-5 px-3 justify-center items-center border-2 border-t-[30px] bg-[#27292D];
+}
+.contact-icon {
+    mask-position: center center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    @apply me-4 aspect-square my-0 ms-0 p-0;
+}
+.contact-icon[data-img="github"] {
+    mask-image: url("/contacts/github.svg");
+    width: 32.5px;
+    @apply bg-[#E5E7EB];
+}
+.contact-icon[data-img="email"] {
+    mask-image: url("/contacts/email.svg");
+    width: 25px;
+    @apply bg-[#E5E7EB];
+}
+.contact-icon[data-img="instagram"] {
+    mask-image: url("/contacts/instagram.svg");
+    width: 32.5px;
+    @apply bg-[#E5E7EB];
+}
+.contact-icon[data-img="phone"] {
+    mask-image: url("/contacts/phone.svg");
+    width: 25px;
+    @apply bg-[#E5E7EB];
+}
+.contact-icon[data-img="whatsapp"] {
+    mask-image: url("/contacts/whatsapp.svg");
+    width: 32.5px;
+    @apply bg-[#E5E7EB];
 }
