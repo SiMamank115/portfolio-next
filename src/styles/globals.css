@@ -117,13 +117,19 @@ div[data-aos][data-aos-easing][data-aos-delay].text-exit {
     @apply transition-[backdrop-filter,background] ring-offset-[#07090D] ring-offset-0 ring-0 grow flex rounded pb-5 justify-center border-2 bg-[#27292D] w-min min-w-[400px] max-w-full;
 }
 .skill:hover,
-.porto:hover {
+.porto:hover,
+.contact:hover {
     @apply bg-[#27292D]/[.20] backdrop-blur-sm;
 }
 a.porto {
-    @apply transition-[box-shadow,border] ring-[#d8f3dc];
+    --tw-ring-color : #212529;
+    @apply transition-[box-shadow,border];
 }
-a.porto:hover {
+a.contact {
+    --tw-ring-color : #212529;
+    @apply transition-[box-shadow,border];
+}
+a.porto:hover,a.contact:hover {
     @apply ring-[5px];
 }
 .skill[type="1"],
@@ -161,7 +167,7 @@ a.porto:hover {
     @apply px-3;
 }
 .contact {
-    @apply transition-[backdrop-filter,background] min-w-[100px] grow flex rounded py-5 px-3 justify-center items-center border-2 border-t-[30px] bg-[#27292D];
+    @apply transition-[backdrop-filter,background] ring-offset-[#07090D] ring-offset-0 ring-0 min-w-[100px] grow flex rounded py-5 px-3 justify-center items-center border-2 border-t-[30px] bg-[#27292D];
 }
 .contact-icon {
     mask-position: center center;

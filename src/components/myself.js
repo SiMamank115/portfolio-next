@@ -27,6 +27,7 @@ export default function MySelf() {
     const speed2 = [0.75, -0.75]; // max min
     const delay2 = [1, 0]; // max min
     useEffect(() => {
+        const ringCol = ["#ee9b00", "#38b000", "#d8f3dc", "#d8f3dc"];
         Porto.forEach((e, x) => {
             porto.push(
                 !e.link ? (
@@ -35,7 +36,7 @@ export default function MySelf() {
                         <div className="porto-body" dangerouslySetInnerHTML={{ __html: e.body }}></div>
                     </div>
                 ) : (
-                    <a target="_blank" href={e.link} key={"porto-" + e.title.replace(" ", "-")} data-scroll data-scroll-speed={random(...speed2)} data-scroll-delay={random(...delay2)} className="porto flex-wrap" type={e.type.toString()}>
+                    <a style={{ "--tw-ring-color": ringCol[random(ringCol.length - 1, 0, true)] }} target="_blank" href={e.link} key={"porto-" + e.title.replace(" ", "-")} data-scroll data-scroll-speed={random(...speed2)} data-scroll-delay={random(...delay2)} className="porto flex-wrap" type={e.type.toString()}>
                         <div className="porto-header">{e.title}</div>
                         <div className="porto-body" dangerouslySetInnerHTML={{ __html: e.body }}></div>
                     </a>
@@ -46,6 +47,7 @@ export default function MySelf() {
     const Contact = contactInfo.contacts;
     const [contact, setContact] = useState([]);
     useEffect(() => {
+        const ringCol = ["#f72585", "#7209b7", "#bf0603", "#2a9d8f", "#ee9b00", "#38b000"];
         Contact.forEach((e, x) => {
             contact.push(
                 !e.link ? (
@@ -53,7 +55,7 @@ export default function MySelf() {
                         <div data-img={e.img} className="contact-icon"></div> {e.name}
                     </div>
                 ) : (
-                    <a target="_blank" href={e.link} key={"contact-" + e.name.toLowerCase().replace(" ", "-")} data-scroll data-scroll-speed={random(...speed2)} data-scroll-delay={random(...delay2)} className="contact">
+                    <a style={{ "--tw-ring-color": ringCol[random(ringCol.length - 1, 0, true)] }} target="_blank" href={e.link} key={"contact-" + e.name.toLowerCase().replace(" ", "-")} data-scroll data-scroll-speed={random(...speed2)} data-scroll-delay={random(...delay2)} className="contact">
                         <div data-img={e.img} className="contact-icon"></div> {e.name}
                     </a>
                 )
@@ -86,7 +88,7 @@ export default function MySelf() {
                     <strong>Menyukai</strong> hal - hal yang <strong>berelasi</strong> dengan kata <strong>digital</strong>. Termasuk diantara nya adalah <strong>Game</strong> dan <strong>Film</strong>. Bermimpi untuk bisa <strong>kuliah</strong> di <strong>luar negri</strong> dan bekerja di mega <strong>company</strong> / <strong>start up</strong>.
                 </p>
             </div>
-            {/* <div className="flex w-full mt-[30rem] justify-around flex-wrap">
+            <div className="flex w-full mt-[30rem] justify-around flex-wrap">
                 <div data-scroll data-scroll-speed={4} className="skill-text font-bold text-8xl text-gray-200 md:w-[45%] md:mb-0 mb-[50px] w-full flex justify-center items-center">
                     skills
                 </div>
@@ -97,7 +99,7 @@ export default function MySelf() {
                     projects
                 </div>
                 <div className="grow gap-x-8 gap-y-12 flex flex-wrap text-gray-100 lg:text-xl max-w-full">{porto}</div>
-            </div> */}
+            </div>
             <div className="flex w-full mt-[30rem] justify-around flex-wrap">
                 <div className="grow md:max-w-[45%] gap-x-4 gap-y-6 flex flex-wrap text-gray-100 lg:text-xl max-w-full">{contact}</div>
                 <div data-scroll data-scroll-speed={4} className="skill-text font-bold text-8xl text-gray-200 md:w-[45%] md:mb-0 mb-[50px] w-full flex justify-center items-center">
@@ -107,9 +109,3 @@ export default function MySelf() {
         </div>
     );
 }
-// "color": "#",
-// "title": "",
-// "body": "",
-// "button": false,
-// "button_link": "/",
-// "button_text": ""
