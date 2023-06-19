@@ -51,12 +51,18 @@ export default function MySelf() {
         Contact.forEach((e, x) => {
             contact.push(
                 !e.link ? (
-                    <div key={"contact-" + e.name.toLowerCase().replace(" ", "-")} data-scroll data-scroll-speed={random(...speed2)} data-scroll-delay={random(...delay2)} className="contact contact-tooltip">
-                        <div data-img={e.img} className="contact-icon"></div> {e.name}
+                    <div key={"contact-" + e.name.toLowerCase().replace(" ", "-")} data-scroll data-scroll-speed={random(...speed2)} data-scroll-delay={random(...delay2)} className="contact contact-tooltip group">
+                        <div className="contact-header">{e.tooltip ?? ""}</div>
+                        <div className="contact-body">
+                            <div data-img={e.img} className="contact-icon"></div> {e.name}
+                        </div>
                     </div>
                 ) : (
                     <a style={{ "--tw-ring-color": ringCol[random(ringCol.length - 1, 0, true)] }} target="_blank" href={e.link} key={"contact-" + e.name.toLowerCase().replace(" ", "-")} data-scroll data-scroll-speed={random(...speed2)} data-scroll-delay={random(...delay2)} className="contact">
-                        <div data-img={e.img} className="contact-icon"></div> {e.name}
+                        <div className="contact-header">{e.tooltip ?? ""}</div>
+                        <div className="contact-body">
+                            <div data-img={e.img} className="contact-icon"></div> {e.name}
+                        </div>
                     </a>
                 )
             );
@@ -89,21 +95,21 @@ export default function MySelf() {
                 </p>
             </div>
             <div className="flex w-full mt-[30rem] justify-around flex-wrap">
-                <div data-scroll data-scroll-speed={4} className="skill-text font-bold text-8xl text-gray-200 md:w-[45%] md:mb-0 mb-[50px] w-full flex justify-center items-center">
+                <div data-scroll data-scroll-speed={4} className="font-bold text-5xl sm:text-8xl text-gray-200 md:w-[45%] md:mb-0 mb-[50px] w-full flex justify-center items-center">
                     skills
                 </div>
                 <div className="grow md:max-w-[45%] gap-x-4 gap-y-6 flex flex-wrap text-gray-100 lg:text-xl max-w-full">{skill}</div>
             </div>
             <div className="flex w-full mt-[30rem] justify-around flex-wrap">
-                <div data-scroll data-scroll-speed={4} className="skill-text font-bold text-8xl text-gray-200 mb-[50px] w-full flex justify-center items-center">
+                <div data-scroll data-scroll-speed={4} className="font-bold text-5xl sm:text-8xl text-gray-200 mb-[50px] w-full flex justify-center items-center">
                     projects
                 </div>
                 <div className="grow gap-x-8 gap-y-12 flex flex-wrap text-gray-100 lg:text-xl max-w-full">{porto}</div>
             </div>
-            <div className="flex w-full mt-[30rem] justify-around flex-wrap">
-                <div className="grow md:max-w-[45%] gap-x-4 gap-y-6 flex flex-wrap text-gray-100 lg:text-xl max-w-full">{contact}</div>
-                <div data-scroll data-scroll-speed={4} className="skill-text font-bold text-8xl text-gray-200 md:w-[45%] md:mb-0 mb-[50px] w-full flex justify-center items-center">
-                    skills
+            <div className="flex w-full mt-[30rem] justify-around  lg:flex-row flex-col-reverse flex-wrap">
+                <div className="grow lg:max-w-[45%] gap-x-4 gap-y-6 flex flex-wrap text-gray-100 lg:text-xl max-w-full">{contact}</div>
+                <div data-scroll data-scroll-speed={4} className="font-bold text-5xl sm:text-8xl text-gray-200 lg:w-[45%] lg:mb-0 mb-[50px] w-full flex justify-center items-center">
+                    contacts
                 </div>
             </div>
         </div>

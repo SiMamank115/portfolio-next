@@ -2,11 +2,19 @@
     "contacts": [
         {
             "name": "Github",
+            "tooltip": "SiMamank115",
             "link": "https://github.com/SiMamank115",
             "img": "github"
         },
         {
+            "name": "Discord",
+            "tooltip": "faeest",
+            "link": "https://discordapp.com/users/493157260533563402",
+            "img": "discord"
+        },
+        {
             "name": "Email",
+            "tooltip": "faeest.115@gmail.com",
             "link": "mailto:faeest.115@gmail.com",
             "img": "email"
         },
@@ -17,6 +25,7 @@
         },
         {
             "name": "Instagram",
+            "tooltip": "@Faeest",
             "link": "https://www.instagram.com/faeest/",
             "img": "instagram"
         },

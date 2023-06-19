@@ -114,7 +114,7 @@ div[data-aos][data-aos-easing][data-aos-delay].text-exit {
     @apply transition-[backdrop-filter,background] min-w-[100px] grow flex rounded py-5 px-3 justify-center border-2 border-t-[30px] bg-[#27292D];
 }
 .porto {
-    @apply transition-[backdrop-filter,background] ring-offset-[#07090D] ring-offset-0 ring-0 grow flex rounded pb-5 justify-center border-2 bg-[#27292D] w-min min-w-[400px] max-w-full;
+    @apply transition-[backdrop-filter,background] ring-offset-[#07090D] ring-offset-0 ring-0 grow flex rounded pb-5 justify-center border-2 bg-[#27292D] w-min min-w-full sm:min-w-[400px] max-w-full;
 }
 .skill:hover,
 .porto:hover,
@@ -161,13 +161,19 @@ a.porto:hover,a.contact:hover {
     @apply bg-[#f72585] ring-[#f72585] text-[#fff];
 }
 .porto-header {
-    @apply w-full py-3 mb-3 text-center font-bold;
+    @apply w-full py-3 mb-3 flex justify-center items-center font-bold;
 }
 .porto-body {
     @apply px-3;
 }
+.contact-body {
+    @apply flex px-3;
+}
+.contact-header {
+    @apply bg-[#adb5bd] text-[#212529] h-[40px] w-full mb-5 flex justify-center items-center font-bold;
+}
 .contact {
-    @apply transition-[backdrop-filter,background] ring-offset-[#07090D] ring-offset-0 ring-0 min-w-[100px] grow flex rounded py-5 px-3 justify-center items-center border-2 border-t-[30px] bg-[#27292D];
+    @apply transition-[backdrop-filter,background] ring-offset-[#07090D] ring-offset-0 ring-0 min-w-[100px] grow flex flex-wrap pb-5 rounded justify-center items-start border-2 border-[#adb5bd] bg-[#27292D];
 }
 .contact-icon {
     mask-position: center center;
@@ -197,6 +203,11 @@ a.porto:hover,a.contact:hover {
 }
 .contact-icon[data-img="whatsapp"] {
     mask-image: url("/contacts/whatsapp.svg");
+    width: 32.5px;
+    @apply bg-[#E5E7EB];
+}
+.contact-icon[data-img="discord"] {
+    mask-image: url("/contacts/discord.svg");
     width: 32.5px;
     @apply bg-[#E5E7EB];
 }

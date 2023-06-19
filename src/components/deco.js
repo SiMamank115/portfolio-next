@@ -5,8 +5,8 @@ export default function Decoration() {
     const conf = {
         star: {
             ratio: [15, 5],
-            top: [100, 0],
-            left: [100, 0],
+            top: [95, 5],
+            left: [95, 5],
             img: [9, 1],
             opacity: [0.95, 0.35],
             delay: [1500, 750],
