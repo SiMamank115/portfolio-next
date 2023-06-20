@@ -12,11 +12,11 @@ import { useEffect, useState } from "react";
 const quicksand = Quicksand({ subsets: ["latin"] });
 export default function App({ Component, pageProps }) {
     const [load, setLoad] = useState(false);
-    const [imageloaded, setLmageloaded] = useState(false);
+    const [imageloaded, setImageloaded] = useState(false);
     useEffect(() => {
         async function fetchData() {
             await LoadImage(["layer-1.webp", "layer-2.webp", "layer-3.webp", "layer-4.webp", "me.webp"]);
-            setLmageloaded(true);
+            setImageloaded(true);
         }
         if (imageloaded) {
             setLoad(true);

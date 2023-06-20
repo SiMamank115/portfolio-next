@@ -86,7 +86,6 @@ export default function Hero({ ok }) {
                     setTimeout(
                         () => {
                             scroll.init();
-                            console.log("start");
                         },
                         process.env.NEXT_PUBLIC_DEV ? 0 : 1000
                     );
@@ -119,7 +118,7 @@ export default function Hero({ ok }) {
     return (
         <div data-scroll-section className="section-0">
             <div className="text-xl sm:text-6xl flex min-h-screen flex-wrap justify-center items-center font-extrabold hero-content">{text_animation}</div>
-            <button className="fixed top-0" onClick={() => scroll?.destroy?.() || scroll?.init?.()}>
+            {/* <button className="fixed top-0" onClick={() => scroll?.destroy?.() || scroll?.init?.()}>
                 Refresh scroll
             </button>
             <button
@@ -129,7 +128,7 @@ export default function Hero({ ok }) {
                 }}
             >
                 Debug
-            </button>
+            </button> */}
             <div data-scroll-speed={5} data-scroll key={"parallax-layer-1"} id={"parallax-layer-1"} className={(process.env.NEXT_PUBLIC_PARTIAL ? "hidden " : "") + "parallax-layer-1 parallax-layer"}></div>
             <div data-scroll-speed={5} data-scroll key={"parallax-layer-1-extender"} id={"parallax-layer-1-extender"} className={(process.env.NEXT_PUBLIC_PARTIAL ? "hidden " : "") + "parallax-layer-1-extender parallax-layer"}></div>
             <div data-scroll-speed={3.5} data-scroll key={"parallax-layer-2"} id={"parallax-layer-2"} className={(process.env.NEXT_PUBLIC_PARTIAL ? "hidden " : "") + "parallax-layer-2 parallax-layer"}></div>

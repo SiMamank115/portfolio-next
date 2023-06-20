@@ -8,7 +8,7 @@ export default function Footer() {
     useEffect(() => {
         text.split("").forEach((e, x) => {
             spans.push(
-                <span className={e == " " ? "sm:px-2 px-1" : ""} data-scroll data-scroll-speed={6} data-scroll-delay={Math.round((text.length * 1.22 - x) * 10) * 0.001}>
+                <span key={"footer-" + x} className={e == " " ? "sm:px-2 px-1" : ""} data-scroll data-scroll-speed={6} data-scroll-delay={Math.round((text.length * 1.22 - x) * 10) * 0.001}>
                     {e}
                 </span>
             );

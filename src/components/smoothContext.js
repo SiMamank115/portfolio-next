@@ -23,18 +23,8 @@ export const SmoothScrollProvider = ({ children, options }) => {
                     throw Error(`[SmoothScrollProvider]: ${error}`);
                 }
             })();
-        } else {
-            scroll.destroy();
-            console.log("stop");
-            scroll.observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        Aos.refresh();
-                    }
-                });
-            });
         }
-
+        scroll ? scroll.destroy() : false;
         return () => {
             scroll && scroll.destroy();
         };

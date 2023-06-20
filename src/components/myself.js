@@ -68,15 +68,10 @@ export default function MySelf() {
             );
         });
     }, []);
-    useEffect(() => {
-        setTimeout(() => {
-            scroll?.init();
-        }, 100);
-    }, [scroll]);
     return (
         <div data-scroll-section className="bg-gradient-to-b from-[#1C2737] via-[#07090d] to-[#07090d] px-8 py-32 flex min-h-[100vh] flex-wrap justify-around items-center section-1">
             <Decoration />
-            {/* <div data-scroll data-scroll-speed={4} className="parallax-introduce sm:max-w-[45%] max-w-[80%] mb-[-200px] sm:mb-0">
+            <div data-scroll data-scroll-speed={4} className="parallax-introduce sm:max-w-[45%] max-w-[80%] mb-[-200px] sm:mb-0">
                 <div>
                     <div data-scroll data-scroll-speed={-1.5} className="parallax-introduce-image">
                         <img src={"/me.webp"}></img>
@@ -105,7 +100,7 @@ export default function MySelf() {
                     projects
                 </div>
                 <div className="grow gap-x-8 gap-y-12 flex flex-wrap text-gray-100 lg:text-xl max-w-full">{porto}</div>
-            </div> */}
+            </div>
             <div className="flex w-full mt-[30rem] justify-around  lg:flex-row flex-col-reverse flex-wrap">
                 <div className="grow lg:max-w-[45%] gap-x-4 gap-y-6 flex flex-wrap text-gray-100 lg:text-xl max-w-full">{contact}</div>
                 <div data-scroll data-scroll-speed={4} className="font-bold text-5xl sm:text-8xl text-gray-200 lg:w-[45%] lg:mb-0 mb-[50px] w-full flex justify-center items-center">
