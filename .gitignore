@@ -36,6 +36,3 @@ next-env.d.ts
 
 # Sentry Auth Token
 .sentryclirc
-sentry.client.config.js
-sentry.edge.config.js
-sentry.server.config.js
