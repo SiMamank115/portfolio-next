@@ -19,15 +19,16 @@ export default function Decoration() {
             left: [100, 0],
             speed: [6, 1],
             opacity: [0.95, 0.35],
-            delay: [0.75, 0.25],
+            delay: [0.5, 0.1],
             color: ["#2a9d8f", "#007200", "#e09f3e", "#9e2a2b", "#f8f9fa", "#3a7ca5", "#3c096c"],
         },
     };
     const [star, setStar] = useState([]);
     const [planet, setPlanet] = useState([]);
     useEffect(() => {
-        for (let i = 0; i < 100; i++) {
-            if (random(100, 0, true) > 95 && planet.length < 5) {
+        let maxPlanet = random(10, 5, true);
+        for (let i = 0; i < random(200, 100, true); i++) {
+            if (random(100, 0, true) > 95 && planet.length < maxPlanet) {
                 let { ratio, color, img, left, opacity, speed, top, delay } = conf.planet;
                 let selectedimg = random(...img, true);
                 if (selectedimg == 3) ratio = [150, 100];

@@ -1,12 +1,12 @@
 import { SmoothScrollProvider } from "@/components/smoothContext";
 import Hero from "@/components/hero";
-import MySelf from "@/components/myself";
 import Footer from "@/components/footer";
+import Content from "@/components/content";
 export default function Home() {
     return (
         <SmoothScrollProvider options={{ smooth: true, smoothMobile: true }}>
             <Hero />
-            <MySelf />
+            <Content />
             <Footer />
         </SmoothScrollProvider>
     );

@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import Compact from "@/helpers/classname";
 import { gsap } from "gsap";
 const nunito = Nunito({ subsets: ["latin"] });
-export default function Hero({ ok }) {
+export default function Hero() {
     const { scroll } = useContext(SmoothScrollContext);
     const animation = ["fade-up", "fade-down", "fade-right", "fade-left", "fade-up-right", "fade-up-left", "fade-down-right", "fade-down-left", "zoom-in-up", "zoom-in-down", "zoom-in-left", "zoom-in-right", "zoom-out-up", "zoom-out-down", "zoom-out-right", "zoom-out-left"],
         hero_text = "faiz ramadhan",

@@ -6,9 +6,10 @@ export default function Footer() {
     const [spans] = useState([]);
 
     useEffect(() => {
-        text.split("").forEach((e, x) => {
+        let txt = text.split(" ");
+        txt.forEach((e, x) => {
             spans.push(
-                <span key={"footer-" + x} className={e == " " ? "sm:px-2 px-1" : ""} data-scroll data-scroll-speed={6} data-scroll-delay={Math.round((text.length * 1.22 - x) * 10) * 0.001}>
+                <span key={"footer-" + x} className={"sm:px-2 px-1"} data-scroll data-scroll-speed={6} data-scroll-delay={Math.round(Math.exp((txt.length - 1 - x) * 0.09) * 100) * 0.001}>
                     {e}
                 </span>
             );
@@ -16,7 +17,7 @@ export default function Footer() {
     }, []);
 
     return (
-        <div data-scroll-section className="relative z-[200] font-bold text-[#adb5bd] justify-center items-center section-2 text-3xl flex flex-wrap gap-y-3 px-4 w-full -mt-2 pb-48 bg-[#27292D]">
+        <div data-scroll-section className="relative z-[200] font-bold text-[#adb5bd] justify-center items-center section-2 text-3xl flex flex-wrap gap-y-3 px-4 w-full -mt-2 pb-64 bg-[#27292D]">
             {spans}
         </div>
     );
