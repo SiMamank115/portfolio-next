@@ -45,5 +45,5 @@ export default function Decoration() {
             }
         }
     }, []);
-    return [...star, ...planet];
+    return <div className="absolute top-0 left-0 right-0 bottom-0">{[...star, ...planet]}</div>;
 }

@@ -211,3 +211,63 @@ a.porto:hover,a.contact:hover {
     width: 32.5px;
     @apply bg-[#E5E7EB];
 }
+
+
+/*  */
+
+
+.card-body {
+    @apply flex px-3;
+}
+.card-header {
+    @apply bg-[#adb5bd] text-[#212529] h-[40px] w-full mb-5 flex justify-center items-center font-bold;
+}
+.card {
+    @apply transition-[backdrop-filter,background] ring-offset-[#07090D] ring-offset-0 ring-0 min-w-[100px] grow flex flex-wrap pb-5 rounded justify-center items-start border-2 border-[#adb5bd] bg-[#27292D];
+}
+.card-icon {
+    mask-position: center center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    @apply me-4 aspect-square my-0 ms-0 p-0;
+}
+.card-icon[data-img="github"] {
+    mask-image: url("/contacts/github.svg");
+    width: 32.5px;
+    @apply bg-[#E5E7EB];
+}
+.card-icon[data-img="email"] {
+    mask-image: url("/contacts/email.svg");
+    width: 25px;
+    @apply bg-[#E5E7EB];
+}
+.card-icon[data-img="instagram"] {
+    mask-image: url("/contacts/instagram.svg");
+    width: 32.5px;
+    @apply bg-[#E5E7EB];
+}
+.card-icon[data-img="phone"] {
+    mask-image: url("/contacts/phone.svg");
+    width: 25px;
+    @apply bg-[#E5E7EB];
+}
+.card-icon[data-img="whatsapp"] {
+    mask-image: url("/contacts/whatsapp.svg");
+    width: 32.5px;
+    @apply bg-[#E5E7EB];
+}
+.card-icon[data-img="discord"] {
+    mask-image: url("/contacts/discord.svg");
+    width: 32.5px;
+    @apply bg-[#E5E7EB];
+}
+a.card {
+    --tw-ring-color : #212529;
+    @apply transition-[box-shadow,border];
+}
+a.card:hover {
+    @apply ring-[5px];
+}
+.card:hover {
+    @apply bg-[#27292D]/[.20] backdrop-blur-sm;
+}
